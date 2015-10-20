@@ -1,0 +1,37 @@
+<div class="container" ng-controller="crudCtrl">
+	<h1>Contact List</h1>
+	<p class="bg-danger" ng-show="blankMsg">Field can't be blank</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<form name="crudfrm"  >
+				<td><input name="name" type="text" class="form-control" ng-model="contact.name" required /></td>
+				<td><input name="email" type="text" class="form-control" ng-model="contact.email" required /></td>
+				<td><input name="number" type="text" class="form-control" ng-model="contact.number" required /></td>
+				<td>
+					<button type="submit" class="btn btn-primary" ng-click="addContact()">Add Record</button>
+					<button type="button" class="btn btn-info" ng-click="update()">Update</button>
+					<button type="button" class="btn btn-info" ng-click="deselect()">Clear</button>
+				</td>
+			</tr>
+			<tr ng-repeat="contact in contactlist">
+				<td>{{contact.name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.number}}</td>
+				<td>
+					<button class="btn btn-danger btn-sm" ng-click="remove(contact._id)">Remove</button>
+					<button class="btn btn-warning btn-sm" ng-click="edit(contact._id)">Edit</button>
+				</td>
+			</tr>
+			</form>
+		</tbody>
+	</table>
+</div>

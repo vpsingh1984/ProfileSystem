@@ -1,22 +1,26 @@
+myApp.controller('crudCtrl', ['$scope', '$http', function($scope, $http){
 
-var myApp = angular.module('profile', []);
-myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
-
-	$scope.title= "vijay";
-	console.log('hello vj');
+	$scope.blankMsg = false;
 
 	var refresh = function(){
+
 		$http.get('/contactlist').success(function(response){
 			$scope.contactlist = response;
 			$scope.contact = "";
 		});
 	};
 	refresh();
+	
 	$scope.addContact = function(){
 		console.log($scope.contact);
-		$http.post('/contactlist', $scope.contact).success(function(response){
-			refresh();
-		});
+		if($scope.contact == ""){
+			$scope.blankMsg = true;
+		}else{
+			$http.post('/contactlist', $scope.contact).success(function(response){
+				refresh();
+				$scope.blankMsg = false;
+			});
+		}
 	};
 
 	$scope.remove = function(id){
@@ -39,5 +43,10 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 			refresh();
 		});
 	};
+
+	$scope.deselect = function(){
+		$scope.contact = "";
+		$scope.blankMsg = false;
+	}
 
 }]);
