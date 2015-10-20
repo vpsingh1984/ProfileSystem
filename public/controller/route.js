@@ -1,7 +1,7 @@
 myApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
 	when('/',	{
-		templateUrl:'partials/contactlist.html',
+		templateUrl:'partials/login.html',
 		//controller:'loginCtrl'
 	}).
 	when('/login',	{
