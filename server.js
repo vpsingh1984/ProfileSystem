@@ -5,10 +5,9 @@ var db = mongojs('contactlist', ['contactlist']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
-
 app.use(bodyParser.json());
 
-app.get('/contactlist', function(req, res){
+app.get('/userContactlist', function(req, res){
 	console.log('get request');
 
 	db.contactlist.find(function(err, docs){
@@ -17,7 +16,7 @@ app.get('/contactlist', function(req, res){
 	});
 });
 
-app.post('/contactlist', function(req, res){
+app.post('/userSaveContactlist', function(req, res){
 	console.log(req.body);
 	db.contactlist.insert(req.body, function(err, doc){
 		res.json(doc);

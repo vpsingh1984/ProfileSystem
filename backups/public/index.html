@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="profile">
+<head>
+	<title>Profile System</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div ng-include="'partials/header.html'" ng-controller="crudCtrl"></div>
+</div>
+<div ng-view></div>
+
+<script src="angular/angular.min.js"></script>
+<script src="angular/angular-route.js"></script>
+<script src="controller/app.js"></script>
+<script src="controller/crud.js"></script>
+<script src="controller/route.js"></script>
+<script src="controller/register.js"></script>
+<!--<script src="controller/loginctrl.js"></script>-->
+</body>
+</html>

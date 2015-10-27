@@ -1,0 +1,46 @@
+<div class="container col-md-5 col-md-offset-3" ng-controller="crudCtrl">
+	<h2>Sign-Up form</h2>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-4 control-label">Name</label>
+			<div class="col-sm-8">
+				<input name="name" type="text" class="form-control" ng-model="contact.name" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+			<div class="col-sm-8">
+				<input name="email" type="text" class="form-control" ng-model="contact.email" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-4 control-label">Contact No.</label>
+			<div class="col-sm-8">
+				<input name="number" type="text" class="form-control" ng-model="contact.number" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-sm-4 control-label">User Name</label>
+			<div class="col-sm-8">
+				<input name="name" type="text" class="form-control" ng-model="contact.uname" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+			<div class="col-sm-8">
+				<input name="name" type="text" class="form-control" ng-model="contact.password" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-sm-4 control-label">Confirm Password</label>
+			<div class="col-sm-8">
+				<input name="name" type="text" class="form-control" ng-model="contact.cpassword" required />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-10">
+				<button type="submit" class="btn btn-primary" ng-click="addContact()">Register</button>
+			</div>
+		</div>
+	</form>
+</div>
