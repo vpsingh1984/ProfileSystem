@@ -1,16 +1,15 @@
 
-var myApp = angular.module('profile', []);
-myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
+//var myApp = angular.module('profile', ['ngRoute']);
+myApp.controller('contactlistCtrl', ['$scope', '$http', function($scope, $http){
 
 	$scope.title= "vijay";
-	console.log('hello vj');
 
 	var refresh = function(){
-		$http.get('/userContactlist').success(function(response){
+		$http.get('/contactlist').success(function(response){
 			$scope.contactlist = response;
 			$scope.contact = "";
-			console.log($scope.contactlist.name);
 		});
+		console.log($scope.contactlist);
 	};
 	refresh();
 
