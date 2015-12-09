@@ -15,4 +15,3 @@ app.use("/carlist", carRouter);
 
 app.listen(8000);
 console.log("server running on 8000");
-console.log("hello vj")
