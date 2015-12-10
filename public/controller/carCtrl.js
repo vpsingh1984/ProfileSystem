@@ -13,7 +13,7 @@ myApp.controller('carlistCtrl', ['$scope', '$http', function($scope, $http){
 		});
 		console.log($scope.carlist);
 	};
-	refresh();
+	//refresh();
 
 	var carList = function(){
 		console.log("calling car list");
